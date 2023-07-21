@@ -12,7 +12,6 @@ Run: \q
 Run: exit
 Run: cd <path/to/z-prefix-crud/back-end>
 Run: knex migrate:latest
-Run: knex seed:run
 Run: npm start
 open another terminal
 Run: cd <path/to/z-prefix-crud/front-end>
