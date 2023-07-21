@@ -140,7 +140,7 @@ export default function ItemDetails() {
             </ul>
             <div>
               <button onClick={handleEdit}>Edit</button>
-              <DeleteItem itemId={id} />
+              <DeleteItem itemDetails={itemDetails} />
             </div>
           </>
         )}
