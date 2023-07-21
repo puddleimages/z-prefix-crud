@@ -27,7 +27,7 @@ export default function ItemDetails() {
   }, [id]);
 
   const handleEdit = () => {
-    if (sessionStorage.getItem('userId') === itemDetails.user_id) {
+    if (parseInt(sessionStorage.getItem('userId')) === itemDetails.user_id) {
       setIsEditing(true);
     } else {
       alert("You don't have permission to edit this item.");
