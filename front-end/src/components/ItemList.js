@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ItemList() {
   const [items, setItems] = useState([]);
@@ -10,17 +11,24 @@ export default function ItemList() {
       .catch((error) => console.error('Error fetching items:', error));
   }, []);
 
-  const mappedItems = items.map((item) => (
-    <li key={item.id}>
-      <strong>Item Name:</strong> {item.item_name}<br />
-      <strong>Description:</strong> {item.description}<br />
+  const itemListElements = items.map((item) => (
+    <div key={item.id}>
+      <Link to={`/items/${item.id}`}>
+        <strong>Item Name:</strong> {item.item_name}
+      </Link>
+      <br />
+      <strong>Description:</strong> {item.description}
+      <br />
       <strong>Quantity:</strong> {item.quantity}
-    </li>
+      <br />
+      <br />
+    </div>
   ));
 
   return (
-    <ul>
-      {mappedItems}
-    </ul>
-  )
-};
+    <>
+      <h2>All Items</h2>
+      {itemListElements}
+    </>
+  );
+}
