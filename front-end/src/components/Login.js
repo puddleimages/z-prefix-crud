@@ -1,3 +1,4 @@
+import '../App.css';
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -32,8 +33,11 @@ export default function Login({ onLogin }) {
   }
 
   return (
-    <form onSubmit={handleLogin}><br />
-      <Link to="/register">Register</Link><br />
+    <form onSubmit={handleLogin}>
+      <br />
+      <Link to="/register">Register</Link>
+      <br />
+      <br />
       <input
         value={username}
         onChange={(e) => setUsername(e.target.value)}
@@ -41,7 +45,8 @@ export default function Login({ onLogin }) {
         placeholder="Username"
         id="username"
         name="username"
-      /><br />
+      />
+      <br />
       <input
         value={password}
         onChange={(e) => setPassword(e.target.value)}
@@ -49,7 +54,8 @@ export default function Login({ onLogin }) {
         placeholder="Password"
         id="password"
         name="password"
-      /><br />
+      />
+      <br />
       <button type="submit">Log In</button>
     </form>
   )

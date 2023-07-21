@@ -27,7 +27,11 @@ export default function ItemDetails() {
   }, [id]);
 
   const handleEdit = () => {
-    setIsEditing(true);
+    if (sessionStorage.getItem('userId') === itemDetails.user_id) {
+      setIsEditing(true);
+    } else {
+      alert("You don't have permission to edit this item.");
+    }
   };
 
   const handleSave = () => {
@@ -66,6 +70,24 @@ export default function ItemDetails() {
           <>
             <ul>
               <li>
+                <strong>Item ID:</strong>
+                <input
+                  type="number"
+                  name="integer"
+                  value={editedItem.id}
+                  onChange={(e) => setEditedItem({ ...editedItem, id: e.target.value })}
+                />
+              </li>
+              <li>
+                <strong>User ID:</strong>
+                <input
+                  type="number"
+                  name="integer"
+                  value={editedItem.user_id}
+                  onChange={(e) => setEditedItem({ ...editedItem, user_id: e.target.value })}
+                />
+              </li>
+              <li>
                 <strong>Item Name:</strong>
                 <input
                   type="text"
@@ -100,6 +122,12 @@ export default function ItemDetails() {
         ) : (
           <>
             <ul>
+              <li>
+                <strong>Item ID:</strong> {itemDetails.id}
+              </li>
+              <li>
+                <strong>User ID:</strong> {itemDetails.user_id}
+              </li>
               <li>
                 <strong>Item Name:</strong> {itemDetails.item_name}
               </li>

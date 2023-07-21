@@ -1,3 +1,4 @@
+import '../App.css';
 import React, { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -45,8 +46,6 @@ export default function Register() {
 
   return (
     <form onSubmit={handleRegistration}>
-      <br />
-      <Link to="/login">Log in</Link><br />
       <input
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
@@ -54,7 +53,8 @@ export default function Register() {
         placeholder="First Name"
         id="firstName"
         name="firstName"
-      /><br />
+      />
+      <br />
       <input
         value={lastName}
         onChange={(e) => setLastName(e.target.value)}
@@ -62,7 +62,8 @@ export default function Register() {
         placeholder="Last Name"
         id="lastName"
         name="lastName"
-      /><br />
+      />
+      <br />
       <input
         value={username}
         onChange={(e) => setUsername(e.target.value)}
@@ -70,7 +71,8 @@ export default function Register() {
         placeholder="Username"
         id="username"
         name="username"
-      /><br />
+      />
+      <br />
       <input
         value={password}
         onChange={(e) => setPassword(e.target.value)}
@@ -78,7 +80,8 @@ export default function Register() {
         placeholder="Password"
         id="password"
         name="password"
-      /><br />
+      />
+      <br />
       <input
         value={passwordConfirmation}
         onChange={(e) => setPasswordConfirmation(e.target.value)}
@@ -86,7 +89,8 @@ export default function Register() {
         placeholder="Confirm password"
         id="passwordConfirmation"
         name="passwordConfirmation"
-      /><br />
+      />
+      <br />
       <button type="submit">Register</button>
     </form>
   )
