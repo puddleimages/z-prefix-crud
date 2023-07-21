@@ -7,12 +7,13 @@ import Register from './components/Register';
 import Inventory from './components/Inventory';
 import NewItem from './components/NewItem';
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [items, setItems] = useState([]);
   const [user, setUser] = useState(sessionStorage.getItem('userId'));
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchItems() {
@@ -39,6 +40,7 @@ const App = () => {
   const handleLogout = () => {
     sessionStorage.removeItem('userId');
     setUser(null);
+    navigate('/items');
   };
 
   return (

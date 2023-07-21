@@ -1,0 +1,30 @@
+a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid #a779e9;
+  padding: 2px 2px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 1% 1%;
+}
+
+a:visited {
+  color: #a779e9;
+}
+
+button {
+  color: #a779e9;
+  text-decoration: none;
+  border: 1px solid #a779e9;
+  padding: 4px 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #3333;
+  font-size: 16px;
+  margin: 1% 1%;
+}
+
+h2 {
+  color: #03ad28;
+  margin: 10px;
+}

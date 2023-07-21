@@ -19,13 +19,20 @@ export default function Inventory() {
       });
   }, [user]);
 
+  const truncateDescription = (description) => {
+    if (description.length <= 100) {
+      return description;
+    }
+    return description.substring(0, 100) + '...';
+  };
+
   const inventoryList = items.map((item) => (
     <li key={item.id}>
       <Link to={`/items/${item.id}`}>
         <strong>Item Name:</strong> {item.item_name}
       </Link>
       <br />
-      <strong>Description:</strong> {item.description}
+      <strong>Description:</strong> {truncateDescription(item.description)}
       <br />
       <strong>Quantity:</strong> {item.quantity}
       <br />
